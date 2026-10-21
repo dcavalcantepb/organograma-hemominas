@@ -18,13 +18,13 @@ const cadeia = [
     id: 'conselho-curador',
     nome: 'Conselho Curador',
     tipo: 'principal',
-    gestor: gestor('Helena Marques Teixeira', 'Presidente do Conselho Curador', '2001', 'helena.teixeira@hemominas.exemplo'),
+    gestor: gestor('Henrique Marques Teixeira', 'Presidente do Conselho Curador', '2001', 'henrique.teixeira@hemominas.exemplo', 'fotos/conselho-curador.jpg'),
   },
   {
     id: 'presidencia',
     nome: 'Presidência',
     tipo: 'principal',
-    gestor: gestor('Ricardo Alves Pimenta', 'Presidente da Fundação', '2000', 'ricardo.pimenta@hemominas.exemplo'),
+    gestor: gestor('Helena Alves Pimenta', 'Presidente da Fundação', '2000', 'helena.pimenta@hemominas.exemplo', 'fotos/presidencia.jpg'),
   },
 ];
 
@@ -36,7 +36,7 @@ const assessorias = [
     tipo: 'assessoria',
     lado: 'esquerda',
     linha: 1,
-    gestor: gestor('Camila Rocha Duarte', 'Chefe de Gabinete', '2010', 'camila.duarte@hemominas.exemplo'),
+    gestor: gestor('Camila Rocha Duarte', 'Chefe de Gabinete', '2010', 'camila.duarte@hemominas.exemplo', 'fotos/gabinete.jpg'),
   },
   {
     id: 'procuradoria',
