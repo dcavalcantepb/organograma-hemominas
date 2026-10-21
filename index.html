@@ -20,9 +20,21 @@
         <span class="linha-central"></span>
       </div>
     </section>
-
-    <p class="detalhe" id="detalhe" aria-live="polite"></p>
   </main>
+
+  <dialog id="card" class="card" aria-labelledby="card-setor">
+    <button type="button" class="card-fechar" id="card-fechar" aria-label="Fechar">&times;</button>
+    <div class="card-foto" id="card-foto"></div>
+    <h2 class="card-setor" id="card-setor"></h2>
+    <dl class="card-dados">
+      <dt>Gestor</dt>
+      <dd id="card-nome"></dd>
+      <dt>Ramal</dt>
+      <dd id="card-ramal"></dd>
+      <dt>E-mail</dt>
+      <dd id="card-email"></dd>
+    </dl>
+  </dialog>
 
   <script src="data.js"></script>
   <script src="app.js"></script>

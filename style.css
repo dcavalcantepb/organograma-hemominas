@@ -134,11 +134,90 @@ header p {
   left: -12px;
 }
 
-.detalhe {
-  margin-top: 1rem;
-  font-size: 0.95rem;
+/* Card do gestor */
+.card {
+  border: none;
+  border-radius: 12px;
+  padding: 1.5rem 1.25rem 1.25rem;
+  width: min(360px, calc(100vw - 32px));
+  color: var(--cinza-texto);
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(11, 60, 99, 0.35);
+}
+
+.card::backdrop {
+  background: rgba(11, 60, 99, 0.45);
+}
+
+.card-fechar {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 1.8rem;
+  line-height: 1;
   color: var(--azul-escuro);
-  font-weight: 600;
+  cursor: pointer;
+}
+
+.card-foto {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 0.75rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--cinza-caixa);
+  border: 3px solid var(--azul-escuro);
+}
+
+.card-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-foto svg {
+  width: 100%;
+  height: 100%;
+  fill: #9aa5b1;
+  display: block;
+}
+
+.card-setor {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  color: var(--azul-escuro);
+}
+
+.card-dados {
+  margin: 0;
+  text-align: left;
+}
+
+.card-dados dt {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--azul-escuro);
+  opacity: 0.8;
+}
+
+.card-dados dd {
+  margin: 0 0 0.7rem;
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+.card-dados dd.vazio {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.card-dados a {
+  color: var(--azul-escuro);
 }
 
 @media (max-width: 480px) {
