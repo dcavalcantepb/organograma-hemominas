@@ -69,5 +69,26 @@ const assessorias = [
     lado: 'direita',
     linha: 3,
     gestor: gestor('Juliana Castro Menezes', 'Assessora de Gestão Estratégica e Qualidade', '2050', 'juliana.menezes@hemominas.exemplo'),
+    // Segundo nível: setores ligados à unidade (aparecem ao clicar no "+").
+    setores: [
+      {
+        id: 'setor-estrategias-projetos',
+        nome: 'Setor de Estratégias e Projetos',
+        tipo: 'setor',
+        gestor: gestor('Rodrigo Azevedo Lima', 'Chefe do Setor de Estratégias e Projetos', '2051', 'rodrigo.lima@hemominas.exemplo'),
+      },
+      {
+        id: 'setor-gestao-processos',
+        nome: 'Setor de Gestão de Processos',
+        tipo: 'setor',
+        gestor: gestor('Fernanda Ribeiro Santos', 'Chefe do Setor de Gestão de Processos', '2052', 'fernanda.santos@hemominas.exemplo'),
+      },
+      {
+        id: 'setor-gestao-qualidade',
+        nome: 'Setor de Gestão da Qualidade',
+        tipo: 'setor',
+        gestor: gestor('Tiago Carvalho Neves', 'Chefe do Setor de Gestão da Qualidade', '2053', 'tiago.neves@hemominas.exemplo'),
+      },
+    ],
   },
 ];

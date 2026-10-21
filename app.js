@@ -95,9 +95,66 @@ function montar() {
     celula.className = `celula ${a.lado}`;
     celula.style.gridRow = a.linha;
     celula.style.gridColumn = a.lado === 'esquerda' ? 1 : 3;
-    celula.appendChild(criarCaixa(a));
+    if (a.setores && a.setores.length) {
+      celula.appendChild(criarCaixaExpansivel(a, grade));
+    } else {
+      celula.appendChild(criarCaixa(a));
+    }
     grade.appendChild(celula);
   });
+}
+
+// Caixa com botão "+" no canto inferior direito que desdobra os setores.
+// O "+" é irmão da caixa (e não filho) porque um <button> não pode conter outro.
+function criarCaixaExpansivel(unidade, grade) {
+  const envoltorio = document.createElement('div');
+  envoltorio.className = 'caixa-expansivel';
+
+  const caixa = criarCaixa(unidade);
+  caixa.classList.add('com-setores');
+
+  const painelId = `setores-${unidade.id}`;
+  const botao = document.createElement('button');
+  botao.type = 'button';
+  botao.className = 'expandir';
+  botao.setAttribute('aria-controls', painelId);
+  botao.setAttribute('aria-expanded', 'false');
+  botao.setAttribute('aria-label', `Mostrar setores de ${unidade.nome}`);
+  botao.textContent = '+';
+
+  const painel = criarPainelSetores(unidade, painelId);
+  // Linha seguinte à última da grade; a linha central não chega até ela.
+  painel.style.gridRow = 4;
+  painel.style.gridColumn = 3;
+  grade.appendChild(painel);
+
+  botao.addEventListener('click', () => {
+    const aberto = painel.hidden;
+    painel.hidden = !aberto;
+    botao.setAttribute('aria-expanded', String(aberto));
+    botao.setAttribute('aria-label', `${aberto ? 'Ocultar' : 'Mostrar'} setores de ${unidade.nome}`);
+    botao.textContent = aberto ? '−' : '+';
+  });
+
+  envoltorio.append(caixa, botao);
+  return envoltorio;
+}
+
+function criarPainelSetores(unidade, painelId) {
+  const painel = document.createElement('div');
+  painel.className = 'desdobramento';
+  painel.id = painelId;
+  painel.hidden = true;
+
+  const lista = document.createElement('ul');
+  lista.setAttribute('aria-label', `Setores de ${unidade.nome}`);
+  unidade.setores.forEach((setor) => {
+    const item = document.createElement('li');
+    item.appendChild(criarCaixa(setor));
+    lista.appendChild(item);
+  });
+  painel.appendChild(lista);
+  return painel;
 }
 
 montar();

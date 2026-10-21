@@ -140,6 +140,105 @@ header .aviso {
   left: -12px;
 }
 
+/* Caixa com "+" para desdobrar setores */
+.caixa-expansivel {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.caixa.com-setores {
+  padding-right: 1.6rem;
+  padding-bottom: 1.2rem;
+}
+
+.expandir {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--azul-escuro);
+  color: #fff;
+  font: 700 15px/1 system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Amplia a área de toque sem aumentar o círculo */
+.expandir::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+}
+
+.expandir:focus-visible {
+  outline: 3px solid var(--selecao);
+}
+
+/* Setores desdobrados, em árvore sob a unidade */
+.desdobramento {
+  margin-top: -8px;
+}
+
+.desdobramento[hidden] {
+  display: none;
+}
+
+.desdobramento ul {
+  list-style: none;
+  margin: 0 0 0 14px;
+  padding: 10px 0 0 14px;
+  border-left: 2px solid var(--linha);
+}
+
+.desdobramento li {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.desdobramento li:last-child {
+  margin-bottom: 0;
+}
+
+.desdobramento li::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  width: 14px;
+  height: 2px;
+  background: var(--linha);
+}
+
+/* Faz a linha vertical terminar no traço do último setor */
+.desdobramento li:last-child::after {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: calc(50% + 1px);
+  bottom: 0;
+  width: 2px;
+  background: var(--fundo-quadro);
+}
+
+.caixa.setor {
+  background: #fff;
+  color: var(--azul-escuro);
+  border: 2px solid var(--azul-escuro);
+  font-size: 0.68rem;
+  width: 100%;
+  min-height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Card do gestor */
 .card {
   border: none;
