@@ -67,33 +67,12 @@ header p {
   cursor: pointer;
   padding: 0.55rem 1rem;
   outline: 3px solid transparent;
-  transition: outline-color 0.1s, transform 0.18s ease, box-shadow 0.18s ease;
+  transition: outline-color 0.1s;
 }
 
 .caixa:focus-visible,
 .caixa.ativa {
   outline-color: var(--selecao);
-}
-
-.caixa:hover,
-.caixa:focus-visible {
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 8px 18px rgba(11, 60, 99, 0.28);
-}
-
-.caixa:active {
-  transform: translateY(-1px) scale(1.01);
-  box-shadow: 0 3px 8px rgba(11, 60, 99, 0.25);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .caixa,
-  .caixa:hover,
-  .caixa:focus-visible,
-  .caixa:active {
-    transform: none;
-    transition: none;
-  }
 }
 
 .caixa.principal {
