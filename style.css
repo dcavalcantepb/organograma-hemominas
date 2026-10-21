@@ -38,6 +38,12 @@ header p {
   opacity: 0.75;
 }
 
+header .aviso {
+  margin-top: 0;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
 .quadro {
   background: var(--fundo-quadro);
   border-radius: 10px;

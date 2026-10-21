@@ -68,6 +68,7 @@ function abrirCard(unidade) {
   preencherFoto(gestor);
   document.getElementById('card-setor').textContent = unidade.nome;
   preencherTexto('card-nome', gestor.nome);
+  preencherTexto('card-cargo', gestor.cargo);
   preencherTexto('card-ramal', gestor.ramal);
   preencherEmail(gestor.email);
   card.showModal();
