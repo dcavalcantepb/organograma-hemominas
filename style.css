@@ -161,13 +161,19 @@ header .aviso {
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: var(--azul-escuro);
-  color: #fff;
-  font: 700 15px/1 system-ui, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* "+" desenhado com duas barras centralizadas (não depende da fonte) */
+  background:
+    linear-gradient(#fff, #fff) center / 10px 2px no-repeat,
+    linear-gradient(#fff, #fff) center / 2px 10px no-repeat,
+    var(--azul-escuro);
   cursor: pointer;
+}
+
+/* Aberto: só a barra horizontal, formando o "−" */
+.expandir[aria-expanded='true'] {
+  background:
+    linear-gradient(#fff, #fff) center / 10px 2px no-repeat,
+    var(--azul-escuro);
 }
 
 /* Amplia a área de toque sem aumentar o círculo */

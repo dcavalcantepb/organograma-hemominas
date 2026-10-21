@@ -120,7 +120,6 @@ function criarCaixaExpansivel(unidade, grade) {
   botao.setAttribute('aria-controls', painelId);
   botao.setAttribute('aria-expanded', 'false');
   botao.setAttribute('aria-label', `Mostrar setores de ${unidade.nome}`);
-  botao.textContent = '+';
 
   const painel = criarPainelSetores(unidade, painelId);
   // Linha seguinte à última da grade; a linha central não chega até ela.
@@ -133,7 +132,6 @@ function criarCaixaExpansivel(unidade, grade) {
     painel.hidden = !aberto;
     botao.setAttribute('aria-expanded', String(aberto));
     botao.setAttribute('aria-label', `${aberto ? 'Ocultar' : 'Mostrar'} setores de ${unidade.nome}`);
-    botao.textContent = aberto ? '−' : '+';
   });
 
   envoltorio.append(caixa, botao);
