@@ -1,16 +1,16 @@
-﻿# Organograma Hemominas
+# Organograma Hemominas
 
-Aplicação web para um organograma interativo da Fundação Hemominas.
+Organograma interativo da Fundação Hemominas, em HTML, CSS e JavaScript puros (sem build).
 
-Estado atual: protótipo mínimo com dados de exemplo (fictícios) e nós que expandem/recolhem.
-
-## Stack
-Vite + React + TypeScript
+Estado atual: Conselho Curador, Presidência e seus órgãos de assessoramento.
 
 ## Rodar
-```
-npm install
-npm run dev
-```
+Abrir `index.html` no navegador. Não precisa de servidor nem de instalação.
 
-A estrutura do organograma fica em `src/data.ts`.
+## Estrutura
+- `data.js` — unidades do organograma
+- `app.js` — montagem da tela e interação
+- `style.css` — visual (paleta do organograma oficial)
+
+## Publicar (GitHub Pages)
+Settings → Pages → Deploy from a branch → `main` / `/ (root)`.

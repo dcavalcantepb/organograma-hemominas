@@ -5,7 +5,7 @@
   --cinza-texto: #1f2a37;
   --fundo-quadro: #f1f2f6;
   --linha: #8a94a0;
-  --destaque: #0b3c63;
+  --selecao: #f0a500;
   color-scheme: light;
 }
 
@@ -66,13 +66,17 @@ header p {
   text-align: center;
   cursor: pointer;
   padding: 0.55rem 1rem;
-  transition: outline-color 0.1s;
   outline: 3px solid transparent;
+  transition: outline-color 0.1s;
 }
 
 .caixa:focus-visible,
 .caixa.ativa {
-  outline-color: #f0a500;
+  outline-color: var(--selecao);
+}
+
+.caixa:hover {
+  filter: brightness(0.95);
 }
 
 .caixa.principal {
@@ -90,10 +94,6 @@ header p {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.caixa:hover {
-  filter: brightness(0.95);
 }
 
 /* Grade: [esquerda] [linha central] [direita] */

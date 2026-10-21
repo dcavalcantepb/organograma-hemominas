@@ -1,14 +1,30 @@
-﻿<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Organograma Hemominas</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organograma Hemominas</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Organograma</h1>
+      <p>Estrutura Orgânica da Fundação Hemominas — Administração Central</p>
+    </header>
 
+    <section class="quadro" aria-label="Administração Central">
+      <div class="coluna" id="cadeia"></div>
+      <div class="assessorias" id="assessorias">
+        <span class="linha-central"></span>
+      </div>
+    </section>
+
+    <p class="detalhe" id="detalhe" aria-live="polite"></p>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
