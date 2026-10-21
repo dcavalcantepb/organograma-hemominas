@@ -63,7 +63,8 @@ function preencherEmail(email) {
 }
 
 function abrirCard(unidade) {
-  const gestor = unidade.gestor;
+  // Dados da pessoa vêm de gestores.js, ligados à unidade pelo id.
+  const gestor = { nome: '', cargo: '', ramal: '', email: '', foto: '', ...gestores[unidade.id] };
   marcarSelecionada(unidade.id);
   preencherFoto(gestor);
   document.getElementById('card-setor').textContent = unidade.nome;
